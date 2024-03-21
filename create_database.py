@@ -1,8 +1,8 @@
-from langchain.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
-from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores.chroma import Chroma
+from langchain_openai import OpenAIEmbeddings
 import os
 import shutil
 
@@ -11,6 +11,14 @@ DATA_PATH = "data/books"
 
 
 def main():
+    # load .env file
+    from dotenv import load_dotenv
+    load_dotenv()
+
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
     generate_data_store()
 
 

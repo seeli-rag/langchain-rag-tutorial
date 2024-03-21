@@ -1,21 +1,25 @@
 # Langchain RAG Tutorial
 
-Install dependencies.
+[
+    ![Open in Remote - Containers](
+        https://xebia.com/wp-content/uploads/2023/11/v1.svg    )
+](
+    https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/seeli-rag/langchain-rag-tutorial.git
+)
 
-```python
-pip install -r requirements.txt
-```
+## Steps to run the application
 
-Create the Chroma DB.
+1. Copy the file env-schema.txt to a file named .env and enter your OPENAI_API_KEY
+
+2. Create the Chroma DB.
 
 ```python
 python create_database.py
 ```
 
-Query the Chroma DB.
+3. Query the Chroma DB.
 
 ```python
 python query_data.py "How does Alice meet the Mad Hatter?"
 ```
 
-You'll also need to set up an OpenAI account (and set the OpenAI key in your environment variable) for this to work.
